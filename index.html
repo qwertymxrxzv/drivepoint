@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101113">
+  <meta name="description" content="DRIVEPOINT — демонстрационный сайт автосервиса. Диагностика, техническое обслуживание, ремонт автомобилей и форма онлайн-записи.">
+  <title>DRIVEPOINT — диагностика, обслуживание и ремонт автомобилей</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-mark" viewBox="0 0 32 32"><path fill="currentColor" stroke="none" d="M9 5h7L9 27H2zm11 0h8l2 7-4 11-6 4h-8l2-6h6l2-2 2-7-1-1h-5z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M6 11h3l2-3 2 6 2-3h3"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M19 15a7 7 0 1 1-14 0c0-4 7-12 7-12s7 8 7 12Z"/><path d="M8.5 15a3.5 3.5 0 0 0 3.5 3.5"/></symbol>
+    <symbol id="i-engine" viewBox="0 0 24 24"><path d="M2 9v8m0-4h3m3-6h7l3 3h3v8h-4l-2 2H8l-3-3V10l3-3Zm2-3h5m-2 0v3"/></symbol>
+    <symbol id="i-brake" viewBox="0 0 24 24"><circle cx="11" cy="12" r="8"/><circle cx="11" cy="12" r="2.5"/><path d="m11 7 .1 0m-5 5 .1 0m5 5 .1 0m7-11 3 2v8l-3 2"/></symbol>
+    <symbol id="i-spring" viewBox="0 0 24 24"><path d="M10 3h4m-2 0v3M8 6h8L8 9h8l-8 3h8l-8 3h8l-8 3h8m-4 0v3m-2 0h4"/></symbol>
+    <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.5"/><path d="M12 6.5v4m5.2 3.2-3.8-1.2m-4.6 3.9 2.3-3.2"/></symbol>
+    <symbol id="i-tool" viewBox="0 0 24 24"><path d="M15 3a5 5 0 0 0-5 6L3.5 16.5a2.8 2.8 0 0 0 4 4L15 14a5 5 0 0 0 6-6l-3 3-3-1-1-3 3-3-2-1Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="m8 10 1 1 2-2m2 1h3m-8 5 1 1 2-2m2 1h3"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-12 6 2 2 4-4"/></symbol>
+    <symbol id="i-focus" viewBox="0 0 24 24"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/><circle cx="12" cy="12" r="4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="m7 3 3 5-2 2a13 13 0 0 0 6 6l2-2 5 3-1 4C10 22 2 14 3 4l4-1Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="DRIVEPOINT — наверх">
+        <svg class="mark" aria-hidden="true"><use href="#i-mark"/></svg><span>DRIVE<span>POINT</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Открыть меню" hidden>
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+      <nav class="navigation" id="navigation" aria-label="Основная навигация">
+        <a class="nav-home" href="#top">Главная</a>
+        <a href="#services">Услуги</a>
+        <a href="#about">О нас</a>
+        <a href="#benefits">Преимущества</a>
+        <a href="#contacts">Контакты</a>
+        <a class="button button-small nav-book" href="#booking">Записаться <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+      </nav>
+      <a class="button button-small header-book" href="#booking">Записаться <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero wide" aria-labelledby="hero-title">
+      <picture class="hero-picture">
+        <source media="(max-width: 40.625em)" srcset="assets/hero-mobile.webp">
+        <img src="assets/hero.webp" alt="Графитовый спортивный автомобиль в мастерской" width="1728" height="720" fetchpriority="high">
+      </picture>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="signal"></span> Профессиональный автосервис</p>
+        <h1 id="hero-title">Ваш автомобиль заслуживает <em>лучшего сервиса</em></h1>
+        <p class="hero-description">Диагностика, техническое обслуживание и ремонт автомобилей с вниманием к каждой детали</p>
+        <div class="actions">
+          <a class="button" href="#booking">Записаться на сервис <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+          <a class="button button-ghost" href="#services">Наши услуги <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+    <div class="container hero-strip" aria-label="Направления работы">
+      <div><span>01</span> Диагностика</div><div><span>02</span> Обслуживание</div><div><span>03</span> Ремонт</div>
+    </div>
+
+    <section class="section container" id="services" aria-labelledby="services-title">
+      <div class="section-head reveal">
+        <div><p class="eyebrow index">01 <span></span> Услуги</p><h2 id="services-title">Что мы делаем</h2></div>
+        <p>От плановой замены масла до поиска причин сложной неисправности.</p>
+      </div>
+      <div class="service-grid reveal">
+        <article class="service">
+          <div class="card-top"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-scan"/></svg></span><span class="card-index">01</span></div>
+          <h3>Компьютерная диагностика</h3><p>Считываем ошибки, проверяем параметры систем и объясняем, откуда взялась неисправность.</p>
+          <a class="service-link" href="#booking" data-service="diagnostics" aria-label="Записаться на компьютерную диагностику">Записаться <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+        </article>
+        <article class="service">
+          <div class="card-top"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg></span><span class="card-index">02</span></div>
+          <h3>Замена масла и фильтров</h3><p>Подбираем расходники по допускам автомобиля и проверяем уровни технических жидкостей.</p>
+          <a class="service-link" href="#booking" data-service="oil" aria-label="Записаться на замену масла и фильтров">Записаться <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+        </article>
+        <article class="service">
+          <div class="card-top"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-engine"/></svg></span><span class="card-index">03</span></div>
+          <h3>Ремонт двигателя</h3><p>Выясняем причину шума, утечки или потери мощности. Согласовываем объём ремонта.</p>
+          <a class="service-link" href="#booking" data-service="engine" aria-label="Записаться на ремонт двигателя">Записаться <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+        </article>
+        <article class="service">
+          <div class="card-top"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-brake"/></svg></span><span class="card-index">04</span></div>
+          <h3>Обслуживание тормозной системы</h3><p>Оцениваем износ дисков и колодок, проверяем суппорты и состояние тормозной жидкости.</p>
+          <a class="service-link" href="#booking" data-service="brakes" aria-label="Записаться на обслуживание тормозной системы">Записаться <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+        </article>
+        <article class="service">
+          <div class="card-top"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-spring"/></svg></span><span class="card-index">05</span></div>
+          <h3>Ремонт подвески</h3><p>Ищем источник стука и люфта, проверяем амортизаторы, опоры и шарниры.</p>
+          <a class="service-link" href="#booking" data-service="suspension" aria-label="Записаться на ремонт подвески">Записаться <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+        </article>
+        <article class="service">
+          <div class="card-top"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-wheel"/></svg></span><span class="card-index">06</span></div>
+          <h3>Шиномонтаж</h3><p>Меняем шины по сезону, балансируем колёса и проверяем давление после установки.</p>
+          <a class="service-link" href="#booking" data-service="tires" aria-label="Записаться на шиномонтаж">Записаться <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-panel" id="about" aria-labelledby="about-title">
+      <div class="container about-grid reveal">
+        <figure class="about-image">
+          <img src="assets/workshop.webp" alt="Ремонтный бокс с автомобилем на подъёмнике" width="1200" height="800" loading="lazy" decoding="async">
+          <figcaption><span class="signal"></span> Ремонтная зона · иллюстрация</figcaption>
+        </figure>
+        <div>
+          <p class="eyebrow index">02 <span></span> О компании</p>
+          <h2 id="about-title">DRIVEPOINT — сервис, которому можно доверять</h2>
+          <p class="section-copy">Начинаем с того, что беспокоит водителя. Проверяем автомобиль, объясняем результаты простыми словами и согласовываем перечень работ до ремонта.</p>
+          <ul class="check-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Осмотр и диагностика по симптомам</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Согласование работ и расходников</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Контрольная проверка перед выдачей</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="benefits" aria-labelledby="benefits-title">
+      <div class="section-head reveal"><div><p class="eyebrow index">03 <span></span> Преимущества</p><h2 id="benefits-title">Что важно в сервисе</h2></div></div>
+      <div class="benefit-grid reveal">
+        <article class="benefit"><svg class="icon" aria-hidden="true"><use href="#i-tool"/></svg><h3>Современное оборудование</h3><p>Сканер показывает данные систем, а подъёмник помогает осмотреть узлы снизу.</p></article>
+        <article class="benefit"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><h3>Понятный процесс обслуживания</h3><p>Рассказываем, что требует внимания сейчас, а что можно запланировать на следующий визит.</p></article>
+        <article class="benefit"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><h3>Удобная запись</h3><p>Выберите услугу и укажите марку автомобиля в короткой форме.</p></article>
+        <article class="benefit"><svg class="icon" aria-hidden="true"><use href="#i-focus"/></svg><h3>Внимание к деталям</h3><p>После ремонта повторно проверяем узел, с которым работали.</p></article>
+      </div>
+    </section>
+
+    <section class="section section-panel" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section-head reveal"><div><p class="eyebrow index">04 <span></span> Этапы работы</p><h2 id="steps-title">От записи до выдачи</h2></div></div>
+        <ol class="steps reveal">
+          <li><span aria-hidden="true">01</span><h3>Оставляете заявку</h3><p>Указываете автомобиль и нужную услугу.</p></li>
+          <li><span aria-hidden="true">02</span><h3>Согласовываем время</h3><p>Уточняем задачу и подбираем время визита.</p></li>
+          <li><span aria-hidden="true">03</span><h3>Проводим диагностику</h3><p>Проверяем автомобиль и обсуждаем результат.</p></li>
+          <li><span aria-hidden="true">04</span><h3>Выполняем согласованные работы</h3><p>Обслуживаем или ремонтируем автомобиль.</p></li>
+          <li><span aria-hidden="true">05</span><h3>Передаём автомобиль</h3><p>Рассказываем, что сделали и что проверить позже.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section container" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-head reveal">
+        <div><p class="eyebrow index">05 <span></span> Галерея</p><h2 id="gallery-title">Внутри мастерской</h2></div>
+        <p>Иллюстрации ремонтной зоны, диагностики и рабочих деталей.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <a class="gallery-item gallery-feature" href="assets/workshop.webp">
+          <img src="assets/workshop.webp" alt="Ремонтная зона с оранжевым подъёмником" width="1200" height="800" loading="lazy" decoding="async">
+          <span class="gallery-label">Ремонтная зона</span><span class="gallery-expand" aria-hidden="true"><svg class="icon"><use href="#i-diagonal"/></svg></span>
+        </a>
+        <a class="gallery-item" href="assets/detail.webp">
+          <img src="assets/detail.webp" alt="Переднее крыло и колесо графитового автомобиля" width="960" height="720" loading="lazy" decoding="async">
+          <span class="gallery-label">Автомобиль в боксе</span><span class="gallery-expand" aria-hidden="true"><svg class="icon"><use href="#i-diagonal"/></svg></span>
+        </a>
+        <a class="gallery-item" href="assets/diagnostics.webp">
+          <img src="assets/diagnostics.webp" alt="Мастер держит диагностический планшет у открытого капота" width="960" height="720" loading="lazy" decoding="async">
+          <span class="gallery-label">Диагностика</span><span class="gallery-expand" aria-hidden="true"><svg class="icon"><use href="#i-diagonal"/></svg></span>
+        </a>
+        <a class="gallery-item" href="assets/process.webp">
+          <img src="assets/process.webp" alt="Мастер осматривает автомобиль на подъёмнике" width="960" height="720" loading="lazy" decoding="async">
+          <span class="gallery-label">Работа мастера</span><span class="gallery-expand" aria-hidden="true"><svg class="icon"><use href="#i-diagonal"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section section-panel booking" id="booking" aria-labelledby="booking-title">
+      <div class="container booking-grid reveal">
+        <div>
+          <p class="eyebrow index">06 <span></span> Онлайн-запись</p>
+          <h2 id="booking-title">Запишитесь на обслуживание</h2>
+          <p class="section-copy">Выберите услугу и попробуйте, как работает форма записи. Для проверки можно использовать вымышленные данные.</p>
+          <p class="demo-note" id="booking-note"><span class="signal"></span> Деморежим. Данные не отправляются и не сохраняются.</p>
+        </div>
+        <form class="booking-form" id="booking-form" autocomplete="off" aria-describedby="booking-note" novalidate>
+          <noscript><p>Для проверки формы включите JavaScript в браузере.</p></noscript>
+          <fieldset id="booking-fields" disabled>
+            <legend class="sr-only">Данные для демонстрационной записи</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="customer">Имя</label>
+                <input id="customer" type="text" placeholder="Например, Алексей" maxlength="80" required aria-describedby="customer-error">
+                <small class="field-error" id="customer-error"></small>
+              </div>
+              <div class="field">
+                <label for="phone">Телефон</label>
+                <input id="phone" type="tel" placeholder="+7 (___) ___-__-__" maxlength="30" required aria-describedby="phone-error">
+                <small class="field-error" id="phone-error"></small>
+              </div>
+              <div class="field">
+                <label for="vehicle">Марка автомобиля</label>
+                <input id="vehicle" type="text" placeholder="Например, Audi" maxlength="80" required aria-describedby="vehicle-error">
+                <small class="field-error" id="vehicle-error"></small>
+              </div>
+              <div class="field">
+                <label for="service-choice">Необходимая услуга</label>
+                <select id="service-choice" required aria-describedby="service-choice-error">
+                  <option value="">Выберите услугу</option>
+                  <option value="diagnostics">Компьютерная диагностика</option>
+                  <option value="oil">Замена масла и фильтров</option>
+                  <option value="engine">Ремонт двигателя</option>
+                  <option value="brakes">Обслуживание тормозной системы</option>
+                  <option value="suspension">Ремонт подвески</option>
+                  <option value="tires">Шиномонтаж</option>
+                </select>
+                <small class="field-error" id="service-choice-error"></small>
+              </div>
+            </div>
+            <button class="button form-submit" type="submit">Проверить запись <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </fieldset>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section container" id="contacts" aria-labelledby="contacts-title">
+      <div class="contacts-grid reveal">
+        <div>
+          <p class="eyebrow index">07 <span></span> Контакты</p>
+          <h2 id="contacts-title">Как нас найти</h2>
+          <p class="section-copy">Пример оформления контактных данных.</p>
+          <dl class="contact-list">
+            <div><dt><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Демоадрес</dt><dd>г. Примерск, проспект Мастерских, 12</dd></div>
+            <div><dt><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Демономер</dt><dd>+7 (000) 000-00-00</dd></div>
+            <div><dt><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> Пример графика</dt><dd>Пн–Сб, 09:00–20:00</dd></div>
+          </dl>
+          <a class="button button-ghost" href="#booking">Записаться <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+        </div>
+        <figure class="map">
+          <svg class="map-art" viewBox="0 0 560 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><pattern id="map-grid" width="58" height="54" patternUnits="userSpaceOnUse" patternTransform="rotate(-17)"><rect x="5" y="5" width="47" height="43" rx="5" fill="#202326"/></pattern></defs>
+            <rect width="560" height="400" fill="#17191c"/>
+            <rect width="560" height="400" fill="url(#map-grid)"/>
+            <path d="M-30 275 161 219l121-45 144-47 177-9M138-23l85 143 59 54 72 140 96 122M-30 72l157 33 135-5 322-53M-20 368l138-50 111 18 195-55 165-3" fill="none" stroke="#303337" stroke-width="12"/>
+            <path d="m138-23 85 143 59 54 72 140 96 122M-30 275l191-56 121-45 144-47 177-9" fill="none" stroke="#3b3d41" stroke-width="3"/>
+            <circle cx="282" cy="174" r="46" fill="#ff783b" opacity=".12"/>
+            <circle cx="282" cy="174" r="28" fill="#ff783b" opacity=".21"/>
+            <circle cx="282" cy="174" r="9" fill="#ff783b"/>
+          </svg>
+          <figcaption><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Схема для демонстрации</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div><a class="brand" href="#top" aria-label="DRIVEPOINT — наверх"><svg class="mark" aria-hidden="true"><use href="#i-mark"/></svg><span>DRIVE<span>POINT</span></span></a><p>Диагностика, обслуживание и ремонт автомобилей.</p></div>
+        <nav class="footer-nav" aria-label="Навигация в подвале"><a href="#top">Главная</a><a href="#services">Услуги</a><a href="#about">О нас</a><a href="#benefits">Преимущества</a><a href="#contacts">Контакты</a></nav>
+        <a class="back-top" href="#top">Наверх <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+      </div>
+      <div class="footer-base"><span>DRIVEPOINT</span><span>Демонстрационный проект для портфолио</span></div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-caption">
+    <div class="lightbox-content">
+      <button type="button" class="lightbox-close" id="gallery-close" aria-label="Закрыть галерею" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <img id="lightbox-image" src="assets/workshop.webp" alt="Ремонтная зона с оранжевым подъёмником" loading="lazy">
+      <div class="lightbox-controls">
+        <button type="button" id="gallery-prev" aria-label="Предыдущее фото"><svg class="icon reverse" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <p id="lightbox-caption" aria-live="polite"></p>
+        <button type="button" id="gallery-next" aria-label="Следующее фото"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
